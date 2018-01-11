@@ -63,14 +63,15 @@ $(document).ready(function(){
         	losses++;
         	$('.modal-body').text("Oops you LOST :( ");
         	$('#myModal').modal('show');
-        	reset();
         }
         else if(userscore == randomnumber)
         {
         	wins++;
         	$('.modal-body').text("Hurray you WON !!!");
         	$('#myModal').modal('show');
-        	reset();
         }
     });
+    $('#myModal').on('hidden.bs.modal', function (e) {
+  			reset();
+	});
 });
